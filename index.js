@@ -70,6 +70,7 @@ app.post("/app", (req, res) => {
   });
   
   customer.destroyCustomer({name:"Fatima"});
+  p1.destroyProduct({name:"stylo"});
 
   let status = 200;
   let message = order;
@@ -80,7 +81,7 @@ app.post("/app", (req, res) => {
 
   
   
-  res.status(status).json({ order, result, association, customer });
+  res.status(status).json({ order, result, association, customer,p1 });
 });
 
 

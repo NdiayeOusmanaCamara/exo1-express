@@ -34,9 +34,13 @@ export class Product {
     console.log(`Product: ${this.name} has been created`);
   }
 
-  destroyProduct() {
-    // console.log(`Product: ${this.name} has been deleted`);
+  
+  destroyProduct(product) {
+    this.name = product.name;
+    console.log(`Product: ${this.name} has been deleted`);
+    return { name: this.name };
   }
+
 
   editProduct(newProduct) {
     this.name = newProduct.name;
