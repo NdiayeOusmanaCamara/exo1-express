@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import { Customer, Order, OrderDetail, Product } from "./gestionComande.js";
 
 const app = express();
-const port = 3080;
+const port = 3081;
 app.use(bodyParser.json());
 app.get("/", (req, res) => {
   res.send("Bonjour les simploniens");
@@ -40,7 +40,7 @@ app.post("/app", (req, res) => {
   result.push(order.getOrder()); // Adding first order in result array
 
   customer.editCustomer({ name: "Mohamed", email: "med@gmail.com" }); //Update curstomer data
-
+  
   //Update order data
   order.editOrder({
     date: new Date(),
@@ -48,7 +48,6 @@ app.post("/app", (req, res) => {
     customer: customer.getCustomer(),
     details: [d1, d2, d3],
   });
-
   /***** Association des elements simple */
   const association = {
     customer: customer.getCustomer(),
@@ -69,6 +68,8 @@ app.post("/app", (req, res) => {
     customer: customer.getCustomer(),
     details: items,
   });
+  
+  customer.destroyCustomer({name:"Fatima"});
 
   let status = 200;
   let message = order;
@@ -77,8 +78,11 @@ app.post("/app", (req, res) => {
     status = 400;
   }
 
-  res.status(status).json({ order, result, association });
+  
+  
+  res.status(status).json({ order, result, association, customer });
 });
+
 
 app.listen(port, () => {
   console.log(`L'application est en ecoute sur port ${port}`);
