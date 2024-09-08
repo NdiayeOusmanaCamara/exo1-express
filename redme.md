@@ -53,7 +53,7 @@ npm start
 - **Créer une commande** : Utilise la méthode `createOrder({ date, amount, customer, details })`.
 - **Modifier une commande** : Utilise la méthode `editOrder({ date, amount, customer, details })`.
 - **Supprimer une commande** : Utilise la méthode `destroyOrder()`.899+
-- **Obtenir les informations d'une commande** : Utilise la méthode `getOrder()`.
+- **Obtenir les informations d'une commande** : Utilise la méthode `getOrder()`
 
 # Auteur
 [N'Diaye Ousmane Camara](https://github.com/NdiayeOusmanaCamara)
