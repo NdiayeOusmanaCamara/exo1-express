@@ -73,17 +73,14 @@ export class Order {
     console.log(`Order has been created`);
   }
 
-  destroyOrder() {
-    this.date = null;
-    this.amount = 0;
-    this.details = [];
-    this.customer = null;
+  destroyOrder(order) {
+    this.date = order.date;
+    this.amount = order.amount;
+    this.details = details;
+    this.customer = this.customer;
     console.log(`Order has been deleted`);
   }
-  destroyOrder() {
-    this.date = null;
-    console.log(`Order has been deleted`);
-  }
+  
 
   editOrder(newOrder) {
     this.date = newOrder.date;
